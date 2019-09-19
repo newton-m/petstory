@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <style>
+
+        /* dim 팝업을 위한 style */
+        * {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 100px;
+}
+
+.pop-layer .pop-container {
+  padding: 20px 25px;
+}
+
+.pop-layer p.ctxt {
+  color: #666;
+  line-height: 25px;
+}
+
+.pop-layer .btn-r {
+  width: 100%;
+  margin: 10px 0 20px;
+  padding-top: 10px;
+  border-top: 1px solid #DDD;
+  text-align: right;
+}
+
+.pop-layer {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 410px;
+  height: auto;
+  background-color: #fff;
+  border: 5px solid #3571B5;
+  z-index: 10;
+}
+
+.dim-layer {
+  display: none;
+  position: fixed;
+  _position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+
+.dim-layer .dimBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: .5;
+  filter: alpha(opacity=50);
+}
+
+.dim-layer .pop-layer {
+  display: block;
+}
+
+a.btn-layerClose {
+  display: inline-block;
+  height: 25px;
+  padding: 0 14px 0;
+  border: 1px solid #304a8a;
+  background-color: #3f5a9d;
+  font-size: 13px;
+  color: #fff;
+  line-height: 25px;
+}
+
+a.btn-layerClose:hover {
+  border: 1px solid #091940;
+  background-color: #1f326a;
+  color: #fff;
+}
+
+        /* dim 팝업을 위한 style */
+
+         /*
+         #header { background-color : rgb(109,109,109)} 
+         일단 주석처리를 해두고 사용할지 안할지 모르니까, 메인페이지 구성할 때 헤더 */
+
+        button {width:300px; height:50px; font-size:14px; border:1px;}
+        
+        #title {width : 300px; color :#FFFFFF ;font-size: 30px; font-weight:bold; line-height:50px; margin:0px;
+        padding:0px 25px; } /* 메뉴바에서 홈페이지 제목 쓸 때 꾸밀 타이틀 css적용안 */
+
+        .menubar{
+        border:1000px;
+        margin:0px;
+        padding:1px;
+        font: 67.5% "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
+        font-size:18px;
+        font-weight:bold;
+        } /*메뉴바 내부에 폰트와 글씨크기들을 설정하는 css */
+        
+        .menubar ul{
+        background: rgb(109,109,109);
+        height:50px;
+        list-style:none;
+        margin:0;
+        padding:0;
+        }
+        
+        .menubar li{
+        float:left;
+        padding:0px;
+        }
+        
+      /*메뉴바 조정을 위해 새로 추가한 부분 나중에 필요없으면 지울것.*/
+        .menubar li p{
+        background: rgb(109,109,109);
+        color:#cccccc;
+        display:block;
+        width:50px;
+        font-weight:normal;
+        font-size:12px;
+        line-height:50px;
+        margin:0px;
+        padding:0px 25px;
+        text-align:center;
+        text-decoration:none;
+        margin-left:20px;
+        } /* .은 class를 의미하고 , 메뉴바중에서 li 중에서 p속성을 가진걸 바꾸라는 의미야 위에껀 */
+        .div ul #p2 p{
+        background: rgb(109,109,109);
+        color:#cccccc;
+        display:block;
+        width:50px;
+        font-weight:normal;
+        font-size:12px;
+        line-height:50px;
+        margin:0px;
+        padding:0px 25px;
+        text-align:center;
+        text-decoration:none;
+        }
+
+        .menubar li p:hover, .menubar ul li:hover a{
+        background: rgb(71,71,71);
+        color:#FFFFFF;
+        text-decoration:none;
+        }
+
+      /*여기까지 우선 주석처리 해둘것*/
+
+        .menubar li a{
+        background: rgb(109,109,109);
+        color:#cccccc;
+        display:block;
+        width:200px;
+        font-weight:normal;
+        line-height:50px;
+        margin:0px;
+        padding:0px 25px;
+        text-align:center;
+        text-decoration:none;
+        }
+        
+        .menubar li a:hover, .menubar ul li:hover a{
+        background: rgb(71,71,71);
+        color:#FFFFFF;
+        text-decoration:none;
+        }
+        
+        .menubar li ul{
+        background: rgb(109,109,109);
+        display:none;
+        height:auto;
+        padding:0px;
+        margin:0px;
+        border:0px;
+        position:absolute;
+        width:250px;
+        z-index:200;
+        }
+        
+        .menubar li:hover ul{
+        display:block;
+        }
+        
+        .menubar li li {
+        background: rgb(109,109,109);
+        display:block;
+        float:none;
+        margin:0px;
+        padding:0px;
+        width:250px;
+        }
+        
+        .menubar li:hover li a{
+        background:none;
+        }
+        
+        .menubar li ul a{
+        display:block;
+        height:50px;
+        font-size:12px;
+        font-style:normal;
+        margin:0px;
+        padding:0px 10px 0px 15px;
+        text-align:center;
+        }
+        
+        .menubar li ul a:hover, .menubar li ul li:hover a{
+        background: rgb(71,71,71);
+        border:0px;
+        width:222px;
+        color:#ffffff;
+        padding:0px 10px 0px 15px;
+        text-decoration:none;
+        text-align:center;
+        }
+        
+        .menubar p{
+        clear:left;
+        }
+        .left-side {
+        background-color:rgb(163, 162, 161);
+        width:32.2%;
+        height:600px;
+        float:left;
+        margin:10px;
+        text-align:center;
+        }
+        .middle-side{
+        background-color:rgb(230, 223, 216);
+        width:32.2%;
+        height:600px;
+        float:left;
+        margin:11px;
+        text-align:center;
+        }
+        .right-side{
+        background-color: rgb(104, 104, 103);
+        width:32.2%;
+        height:600px;
+        float:left;
+        margin:10px;
+        text-align:center;
+        }
+
+        .left-sidebytwo{ 
+        background-color: rgb(104, 104, 103);
+        width:900px;
+        height:200px;
+        float:left;
+        margin:22px;
+        text-align:center;
+        }
+
+        .right-sidebytwo{ 
+        background-color: rgb(104, 104, 103);
+        width:900px;
+        height:200px;
+        float:left;
+        margin:22px;
+        text-align:center;
+        }
+
+        .dimmed {
+            position:fixed;
+            top:0;
+            right:0;
+            bottom:0;
+            left:0;
+            background: #000;
+            opacity:.8;
+            filter:alpha(opacity=80);
+            z-index:10;
+        }
+        </style>
+        
+    </head>
+
+    <body>
+        <center>
+        <title>반려동물 관리 페이지</title>
+        
+        <div class="menubar">
+            <ul>
+             <li id="title">이름은 대충짓고</li>
+             <li><a href="반려동물 관리페이지.html">메인 홈</a></li>
+             <li><a>게시판</a>
+                <ul>
+                 <li><a href="종류.html">반려동물 종류</a></li>
+                 <li><a href="자랑하기.html">내 반려동물 자랑하기</a></li>
+                 <li><a href="QnA.html">함께 나누는 QnA</a></li> 
+                 <li><a href="요청사항.html">요청사항</a></li>
+                </ul>
+             </li>
+             <li><a>사이트 소개</a>
+                <ul>
+                 <li><a href="관리자.html">사이트 관리자 소개</a></li>
+                 <li><a href="꿀팁.html">사이트를 이용하는 꿀팁</a></li>
+                </ul>
+             </li>
+             <li><a href="QR.html">QR코드로 내 반려동물 찾기</a></li>
+             <li><p href="로그인.html">로그인</p></li>
+             <li id="p2"><p href="회원가입.html">회원가입</p></li>
+             
+            </ul>
+            </div>
+
+            <div>
+                <div class="left-side">
+                 <p>왼쪽</p>
+                 <button onclick="javascript:alertmodel()"> click me to show alert model </button>
+                </div>
+
+                <div class="middle-side">
+                <button type="button" onclick="location.href='버튼이벤트 연습.html'">딤 팝업 연습</button>
+                 <p>가운데</p>
+                 
+                 <div class="dim-layer" style="display: block;">
+                        <div class="dimBg">
+                        </div>
+                        <div class="pop-layer" id="notice_layer" style="margin-top: -247px; margin-left: -500px;">
+                        <div class="pop-container">
+                        <div class="pop-conts">
+                        <!--content //-->
+                                        <br>
+                        <div class="title">
+                        제목........</div>
+                        <div class="ctxt">
+                        내용............</div>
+                        <div class="btn-r">
+                        <a class="btn-layerClose" href="반려동물 관리페이지 수정본.html">오늘 하루 이 창을 열지 않음</a>
+                                        </div>
+                        <!--// content-->
+                                    </div>
+                        </div>
+                        </div>
+                        </div>
+                </div>
+
+                <div class="right-side">
+                 <p>오른쪽</p>
+                </div>
+            </div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <div>
+                <div class="left-sidebytwo">
+                    사진?
+                </div>
+
+                <div class="right-sidebytwo">
+                    QR코드
+                </div>
+            </div>
+        </center>
+    </body>
+</html>
+
+<script> 
+function alertmodel() { 
+    alert('확인을 눌러주세요 감사합니다.'); 
+    }
+
+
+
+$('.btn-example').click(function(){
+        var $href = $(this).attr('href');
+        layer_popup($href);
+    });
+    function layer_popup(el){
+
+        var $el = $(el);        //레이어의 id를 $el 변수에 저장
+        var isDim = $el.prev().hasClass('dimBg');   //dimmed 레이어를 감지하기 위한 boolean 변수
+
+        isDim ? $('.dim-layer').fadeIn() : $el.fadeIn();
+
+        var $elWidth = ~~($el.outerWidth()),
+            $elHeight = ~~($el.outerHeight()),
+            docWidth = $(document).width(),
+            docHeight = $(document).height();
+
+        // 화면의 중앙에 레이어를 띄운다.
+        if ($elHeight < docHeight || $elWidth < docWidth) {
+            $el.css({
+                marginTop: -$elHeight /2,
+                marginLeft: -$elWidth/2
+            })
+        } else {
+            $el.css({top: 0, left: 0});
+        }
+
+        $el.find('a.btn-layerClose').click(function(){
+            isDim ? $('.dim-layer').fadeOut() : $el.fadeOut(); // 닫기 버튼을 클릭하면 레이어가 닫힌다.
+            return false;
+        });
+
+        $('.layer .dimBg').click(function(){
+            $('.dim-layer').fadeOut();
+            return false;
+        });
+
+    } 
+
+/* 레이어 설정을 위한 dim용 script */
+</script>
