@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <style>
+
+        #header { background-color : rgb(109,109,109)}
+        
+        .menubar{
+        border:1000px;
+        margin:0px;
+        padding:1px;
+        font: 67.5% "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
+        font-size:14px;
+        font-weight:bold;
+        }
+        
+        .menubar ul{
+        background: rgb(109,109,109);
+        height:50px;
+        list-style:none;
+        margin:0;
+        padding:0;
+        }
+        
+        .menubar li{
+        float:left;
+        padding:0px;
+        }
+        
+        .menubar li a{
+        background: rgb(109,109,109);
+        color:#cccccc;
+        display:block;
+        font-weight:normal;
+        line-height:50px;
+        margin:0px;
+        padding:0px 25px;
+        text-align:center;
+        text-decoration:none;
+        }
+        
+        .menubar li a:hover, .menubar ul li:hover a{
+        background: rgb(71,71,71);
+        color:#FFFFFF;
+        text-decoration:none;
+        }
+        
+        .menubar li ul{
+        background: rgb(109,109,109);
+        display:none;
+        height:auto;
+        padding:0px;
+        margin:0px;
+        border:0px;
+        position:absolute;
+        width:200px;
+        z-index:200;
+        }
+        
+        .menubar li:hover ul{
+        display:block;
+        }
+        
+        .menubar li li {
+        background: rgb(109,109,109);
+        display:block;
+        float:none;
+        margin:0px;
+        padding:0px;
+        width:200px;
+        }
+        
+        .menubar li:hover li a{
+        background:none;
+        }
+        
+        .menubar li ul a{
+        display:block;
+        height:50px;
+        font-size:12px;
+        font-style:normal;
+        margin:0px;
+        padding:0px 10px 0px 15px;
+        text-align:left;
+        }
+        
+        .menubar li ul a:hover, .menubar li ul li:hover a{
+        background: rgb(71,71,71);
+        border:0px;
+        color:#ffffff;
+        text-decoration:none;
+        }
+        
+        .menubar p{
+        clear:left;
+        }
+        </style>
+        
+    </head>
+
+    <body>
+        <center>
+        <title>페이지에서 알려드리는 꿀팁!</title>
+        <div>
+            <h1>페이지에서 알려드리는 꿀팁!</h1>
+        </div>
+        
+        <div class="menubar">
+            <ul>
+             <li><a href="반려동물 관리페이지.html">메인 홈</a></li>
+             <li><a>게시판</a>
+                <ul>
+                 <li><a href="종류.html">반려동물 종류</a></li>
+                 <li><a href="자랑하기.html">내 반려동물 자랑하기</a></li>
+                 <li><a href="QnA.html">함께 나누는 QnA</a></li> 
+                 <li><a href="요청사항.html">요청사항</a></li>
+                </ul>
+             </li>
+             <li><a>사이트 소개</a>
+                <ul>
+                 <li><a href="관리자.html">사이트 관리자 소개</a></li>
+                 <li><a href="꿀팁.html">사이트를 이용하는 꿀팁</a></li>
+                </ul>
+             </li>
+             <<li><a href="QR.html">QR코드로 내 반려동물 찾기</a></li>
+            </ul>
+            </div>
+        </center>
+    </body>
+</html>

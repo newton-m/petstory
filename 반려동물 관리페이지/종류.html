@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <style>
+
+        #header { background-color : rgb(109,109,109)}
+        
+        .menubar{
+        border:1000px;
+        margin:0px;
+        padding:1px;
+        font: 67.5% "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
+        font-size:14px;
+        font-weight:bold;
+        }
+        
+        .menubar ul{
+        background: rgb(109,109,109);
+        height:50px;
+        list-style:none;
+        margin:0;
+        padding:0;
+        }
+        
+        .menubar li{
+        float:left;
+        padding:0px;
+        }
+        
+        .menubar li a{
+        background: rgb(109,109,109);
+        color:#cccccc;
+        display:block;
+        font-weight:normal;
+        line-height:50px;
+        margin:0px;
+        padding:0px 25px;
+        text-align:center;
+        text-decoration:none;
+        }
+        
+        .menubar li a:hover, .menubar ul li:hover a{
+        background: rgb(71,71,71);
+        color:#FFFFFF;
+        text-decoration:none;
+        }
+        
+        .menubar li ul{
+        background: rgb(109,109,109);
+        display:none; 
+        height:auto;
+        padding:0px;
+        margin:0px;
+        border:0px;
+        position:absolute;
+        width:200px;
+        z-index:200;
+        }
+        
+        .menubar li:hover ul{
+        display:block;
+        }
+        
+        .menubar li li {
+        background: rgb(109,109,109);
+        display:block;
+        float:none;
+        margin:0px;
+        padding:0px;
+        width:200px;
+        }
+        
+        .menubar li:hover li a{
+        background:none;
+        }
+        
+        .menubar li ul a{
+        display:block;
+        height:50px;
+        font-size:12px;
+        font-style:normal;
+        margin:0px;
+        padding:0px 10px 0px 15px;
+        text-align:left;
+        }
+        
+        .menubar li ul a:hover, .menubar li ul li:hover a{
+        background: rgb(71,71,71);
+        border:0px;
+        color:#ffffff;
+        text-decoration:none;
+        }
+        
+        .menubar p{
+        clear:left;
+        }
+        .left-box {      
+                 float: left;
+                 width: 50%;                
+                  }                              
+        .right-box {    
+                 float: right;               
+                 width: 50%;
+                   }
+        </style>
+        
+    </head>
+
+    <body>
+        <center>
+        <title>반려동물 종류</title>
+        <div>
+            <h1>반려동물을 안내해드려요!</h1>
+        </div>
+        
+        <div class="menubar">
+            <ul>
+             <li><a href="반려동물 관리페이지.html">메인 홈</a></li>
+             <li><a>게시판</a>
+                <ul>
+                 <li><a href="종류.html">반려동물 종류</a></li>
+                 <li><a href="자랑하기.html">내 반려동물 자랑하기</a></li>
+                 <li><a href="QnA.html">함께 나누는 QnA</a></li> 
+                 <li><a href="요청사항.html">요청사항</a></li>
+                </ul>
+             </li>
+             <li><a>사이트 소개</a>
+                <ul>
+                 <li><a href="관리자.html">사이트 관리자 소개</a></li>
+                 <li><a href="꿀팁.html">사이트를 이용하는 꿀팁</a></li>
+                </ul>
+             </li>
+             <<li><a href="QR.html">QR코드로 내 반려동물 찾기</a></li>
+            </ul>
+            </div>
+
+        <div>
+            <h2>반려동물의 종류는 참 다양합니다.</h2>
+            <h2>이 중에서 가장 대표적인 예시를 두개만 들어보려합니다.</h2>
+            <br><br><br>
+            <div class="left-box">
+                <img src="강아지사진.jpeg" height=400px width=500px>
+                <h3>강아지 사진입니다.</h3>
+            </div>
+            <div class="right-box">
+                <img src="고양이사진.jpeg" height=400px width=500px>
+                <h3>고양이 사진입니다.</h3>
+            </div>
+        </div>
+        </center>
+    </body>
+</html>
